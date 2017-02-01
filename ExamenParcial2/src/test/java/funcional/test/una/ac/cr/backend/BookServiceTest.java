@@ -63,6 +63,17 @@ public class BookServiceTest {
 
         assertEquals(books.size(), books.size());
     }
+    
+    @Test
+    public void testDeleteAllBook() {
+        bookDAO = new BookDAOImpl();
+        bookService = new BookServiceImpl(bookDAO);
+        boolean isDeleted = false;
+
+        isDeleted = bookService.deleteAll();
+
+        assertEquals(isDeleted, true);
+    }
 
     @After
     public void deleteAll() {

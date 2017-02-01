@@ -8,14 +8,17 @@ package funcional.test.una.ac.cr.backend;
 import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.After;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import una.ac.cr.backend.dao.BookDAOImpl;
 import una.ac.cr.backend.dao.BookTypeDAO;
 import una.ac.cr.backend.dao.BookTypeDAOImpl;
 import una.ac.cr.backend.model.BookType;
+import una.ac.cr.backend.service.BookServiceImpl;
 import una.ac.cr.backend.service.BookTypeService;
 import una.ac.cr.backend.service.BookTypeServiceImpl;
 
@@ -53,6 +56,17 @@ public class BookTypeServiceTest {
         when(bookTypeService.findByType(bookType.getType())).thenReturn(bookType);
 
         assertThat(bookType.getType(), is("Novela"));
+    }
+    
+    @Test
+    public void testDeleteAllBook() {
+        bookTypeDAO = new BookTypeDAOImpl();
+        bookTypeService = new BookTypeServiceImpl(bookTypeDAO);
+        boolean isDeleted = false;
+        
+        isDeleted = bookTypeService.deleteAll();
+
+        assertEquals(isDeleted, true);
     }
 
     @After

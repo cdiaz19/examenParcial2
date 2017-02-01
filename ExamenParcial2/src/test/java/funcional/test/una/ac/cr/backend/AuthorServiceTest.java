@@ -79,6 +79,17 @@ public class AuthorServiceTest {
         assertEquals(authorContacts.size(), authorContacts.size());
     }
 
+    @Test
+    public void testDeleteAllBook() {
+        authorContactDAO = new AuthorContactDAOImpl();
+        authorService = new AuthorServiceImpl(authorContactDAO);
+        boolean isDeleted = false;
+
+        isDeleted = authorService.deleteAll();
+
+        assertEquals(isDeleted, true);
+    }
+
     @After
     public void deleteAll() {
         authorDAO = new AuthorDAOImpl();
