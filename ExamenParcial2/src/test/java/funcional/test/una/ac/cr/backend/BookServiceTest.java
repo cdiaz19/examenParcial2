@@ -30,7 +30,7 @@ public class BookServiceTest {
     private List<Book> books;
     private Book book = null;
 
-    @Test
+    /*@Test
     public void testSaveBook() {
         bookDAO = new BookDAOImpl();
         bookService = new BookServiceImpl(bookDAO);
@@ -68,5 +68,5 @@ public class BookServiceTest {
     public void deleteAll() {
         bookDAO = new BookDAOImpl();
         bookService = new BookServiceImpl(bookDAO);
-    }
+    }*/
 }

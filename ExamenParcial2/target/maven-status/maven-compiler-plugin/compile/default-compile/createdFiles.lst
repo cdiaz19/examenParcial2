@@ -1,5 +1,6 @@
 una/ac/cr/backend/dao/BookDAOImpl.class
 una/ac/cr/backend/service/BookServiceImpl.class
+una/ac/cr/backend/webservice/AuthorWebService.class
 una/ac/cr/backend/service/AuthorServiceImpl.class
 una/ac/cr/backend/service/BookTypeServiceImpl.class
 una/ac/cr/backend/model/BookType.class
