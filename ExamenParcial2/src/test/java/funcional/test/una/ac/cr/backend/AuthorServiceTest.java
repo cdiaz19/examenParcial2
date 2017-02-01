@@ -80,7 +80,7 @@ public class AuthorServiceTest {
     }
 
     @Test
-    public void testDeleteAllBook() {
+    public void testDeleteAllAuthors() {
         authorContactDAO = new AuthorContactDAOImpl();
         authorService = new AuthorServiceImpl(authorContactDAO);
         boolean isDeleted = false;

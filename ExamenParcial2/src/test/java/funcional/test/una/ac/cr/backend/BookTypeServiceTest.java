@@ -57,13 +57,13 @@ public class BookTypeServiceTest {
 
         assertThat(bookType.getType(), is("Novela"));
     }
-    
+
     @Test
-    public void testDeleteAllBook() {
+    public void testDeleteAllBookType() {
         bookTypeDAO = new BookTypeDAOImpl();
         bookTypeService = new BookTypeServiceImpl(bookTypeDAO);
         boolean isDeleted = false;
-        
+
         isDeleted = bookTypeService.deleteAll();
 
         assertEquals(isDeleted, true);

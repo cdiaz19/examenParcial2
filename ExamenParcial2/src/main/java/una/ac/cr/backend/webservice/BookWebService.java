@@ -87,4 +87,22 @@ public class BookWebService {
 
         return result;
     }
+    
+    /**
+     * Retrieves All the totalPriceBooks
+     *
+     * @return
+     */
+    @GET
+    @Path("/totalprice")
+    @Produces(MediaType.APPLICATION_JSON)
+    public float getTotalPriceAllBook() {
+        float totalPrice = 0;
+        bookDAO = new BookDAOImpl();
+        bookService = new BookServiceImpl(bookDAO);
+
+        totalPrice = bookService.totalPriceAll();
+
+        return totalPrice;
+    }
 }

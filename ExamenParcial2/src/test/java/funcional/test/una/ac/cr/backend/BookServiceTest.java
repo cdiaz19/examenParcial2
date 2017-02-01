@@ -8,6 +8,7 @@ package funcional.test.una.ac.cr.backend;
 import java.util.Calendar;
 import java.util.List;
 import org.junit.After;
+import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
@@ -63,8 +64,8 @@ public class BookServiceTest {
 
         assertEquals(books.size(), books.size());
     }
-    
-    @Test
+
+    /*@Test
     public void testDeleteAllBook() {
         bookDAO = new BookDAOImpl();
         bookService = new BookServiceImpl(bookDAO);
@@ -73,6 +74,17 @@ public class BookServiceTest {
         isDeleted = bookService.deleteAll();
 
         assertEquals(isDeleted, true);
+    }*/
+
+    @Test
+    public void testTotalPriceAllBook() {
+        bookDAO = new BookDAOImpl();
+        bookService = new BookServiceImpl(bookDAO);
+        float bookTotalPrice = 0;
+
+        bookTotalPrice = bookService.totalPriceAll();
+
+        Assert.assertEquals(bookTotalPrice, bookTotalPrice, 0f);
     }
 
     @After
