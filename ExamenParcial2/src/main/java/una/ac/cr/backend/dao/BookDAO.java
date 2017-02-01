@@ -32,5 +32,4 @@ public interface BookDAO {
      * @return
      */
     public List<Book> findAll();
-
 }

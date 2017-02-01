@@ -5,6 +5,7 @@
  */
 package una.ac.cr.backend.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import una.ac.cr.backend.dao.BookDAO;
 import una.ac.cr.backend.model.Book;
@@ -33,17 +34,17 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean deleteAll() {
-        return getBookDAO().deleteAll();
+        return bookDAO.deleteAll();
     }
 
     @Override
     public Book saveBook(Book book) {
-        return getBookDAO().saveBook(book);
+        return bookDAO.saveBook(book);
     }
 
     @Override
     public List<Book> findAll() {
-        return getBookDAO().findAll();
+        return bookDAO.findAll();
     }
 
     /**
@@ -58,5 +59,18 @@ public class BookServiceImpl implements BookService {
      */
     public void setBookDAO(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
+    }
+
+    @Override
+    public float totalPriceAll() {
+        float totalPrice = 0;
+        List<Book> bookList = new ArrayList<>();
+
+        bookList = bookDAO.findAll();
+        for (Book book : bookList) {
+            totalPrice += book.getPrice();
+        }
+
+        return totalPrice;
     }
 }

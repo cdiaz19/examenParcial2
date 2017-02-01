@@ -32,4 +32,10 @@ public interface BookService {
      * @return
      */
     public List<Book> findAll();
+
+    /**
+     *
+     * @return
+     */
+    public float totalPriceAll();
 }
