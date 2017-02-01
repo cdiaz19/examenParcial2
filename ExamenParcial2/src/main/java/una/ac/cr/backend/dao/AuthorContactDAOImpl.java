@@ -21,13 +21,14 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
+        List<AuthorContact> authorContactList = new ArrayList<>();
 
         session.beginTransaction();
-        List<AuthorContact> authorContactList = new ArrayList<>();
         authorContactList = session.createCriteria(AuthorContact.class).list();
-
-        session.delete(authorContactList);
-        isDeleted = true;
+        for (Object obj : authorContactList) {
+            session.delete(obj);
+            isDeleted = true;
+        }
         session.getTransaction().commit();
 
         return isDeleted;

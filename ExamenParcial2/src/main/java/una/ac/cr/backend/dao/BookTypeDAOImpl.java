@@ -22,13 +22,14 @@ public class BookTypeDAOImpl implements BookTypeDAO {
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
+        List<BookType> bookTypeList = new ArrayList<>();
 
         session.beginTransaction();
-        List<BookType> bookTypeList = new ArrayList<>();
         bookTypeList = session.createCriteria(BookType.class).list();
-
-        session.delete(bookTypeList);
-        isDeleted = true;
+        for (Object obj : bookTypeList) {
+            session.delete(obj);
+            isDeleted = true;
+        }
         session.getTransaction().commit();
 
         return isDeleted;

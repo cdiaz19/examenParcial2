@@ -30,7 +30,7 @@ public class BookTypeServiceTest {
     private List<BookType> bookTypes;
     private BookType bookType = null;
 
-    /*@Test
+    @Test
     public void testSaveAuthorContact() {
         bookTypeDAO = new BookTypeDAOImpl();
         bookTypeService = new BookTypeServiceImpl(bookTypeDAO);
@@ -59,5 +59,5 @@ public class BookTypeServiceTest {
     public void deleteAll() {
         bookTypeDAO = new BookTypeDAOImpl();
         bookTypeService = new BookTypeServiceImpl(bookTypeDAO);
-    }*/
+    }
 }

@@ -7,6 +7,7 @@ package una.ac.cr.backend.webservice;
 
 import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -69,5 +70,21 @@ public class BookWebService {
         book = bookService.saveBook(book);
 
         return book;
+    }
+
+    /**
+     * Delete all BookType
+     *
+     * @return
+     */
+    @DELETE
+    @Path("/")
+    public boolean deleteBookType() {
+        boolean result;
+        bookDAO = new BookDAOImpl();
+        bookService = new BookServiceImpl(bookDAO);
+        result = bookService.deleteAll();
+
+        return result;
     }
 }

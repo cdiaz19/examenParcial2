@@ -36,7 +36,7 @@ public class AuthorServiceTest {
     private List<AuthorContact> authorContacts;
     private Author author = null;
 
-   /* public AuthorServiceTest() {
+    public AuthorServiceTest() {
     }
 
     @Test
@@ -84,5 +84,5 @@ public class AuthorServiceTest {
         authorDAO = new AuthorDAOImpl();
         authorContactDAO = new AuthorContactDAOImpl();
         authorService = new AuthorServiceImpl(authorDAO, authorContactDAO);
-    }*/
+    }
 }

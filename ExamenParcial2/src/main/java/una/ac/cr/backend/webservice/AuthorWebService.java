@@ -7,6 +7,7 @@ package una.ac.cr.backend.webservice;
 
 import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -87,10 +88,26 @@ public class AuthorWebService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public AuthorContact createAuthorContact(AuthorContact authorContact) {
-        authorDAO = new AuthorDAOImpl();
-        authorService = new AuthorServiceImpl(authorDAO);
+        authorContactDAO = new AuthorContactDAOImpl();
+        authorService = new AuthorServiceImpl(authorContactDAO);
         authorContact = authorService.saveAuthorContact(authorContact);
 
         return authorContact;
+    }
+
+    /**
+     * Delete all AuthorContact
+     *
+     * @return
+     */
+    @DELETE
+    @Path("/")
+    public boolean deleteAuthorContact() {
+        boolean result;
+        authorContactDAO = new AuthorContactDAOImpl();
+        authorService = new AuthorServiceImpl(authorContactDAO);
+        result = authorService.deleteAll();
+
+        return result;
     }
 }

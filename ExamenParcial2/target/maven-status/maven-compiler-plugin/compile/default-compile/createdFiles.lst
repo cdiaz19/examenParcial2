@@ -11,6 +11,7 @@ una/ac/cr/backend/dao/AuthorContactDAO.class
 una/ac/cr/backend/service/BookTypeService.class
 una/ac/cr/backend/dao/AuthorDAO.class
 una/ac/cr/backend/service/AuthorService.class
+una/ac/cr/backend/webservice/BookTypeWebService.class
 una/ac/cr/backend/dao/BookTypeDAO.class
 una/ac/cr/backend/model/AuthorContact.class
 una/ac/cr/backend/dao/BookDAO.class
