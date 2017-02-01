@@ -58,7 +58,7 @@ public class AuthorWebService {
     }
 
     /**
-     * Retrieves only one office
+     * Retrieves only one author
      *
      * @param name_author
      * @return
