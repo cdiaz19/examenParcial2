@@ -79,7 +79,7 @@ public class AuthorServiceTest {
         assertEquals(authorContacts.size(), authorContacts.size());
     }
 
-    @Test
+    /*@Test
     public void testDeleteAllAuthors() {
         authorContactDAO = new AuthorContactDAOImpl();
         authorService = new AuthorServiceImpl(authorContactDAO);
@@ -88,7 +88,7 @@ public class AuthorServiceTest {
         isDeleted = authorService.deleteAll();
 
         assertEquals(isDeleted, true);
-    }
+    }*/
 
     @After
     public void deleteAll() {

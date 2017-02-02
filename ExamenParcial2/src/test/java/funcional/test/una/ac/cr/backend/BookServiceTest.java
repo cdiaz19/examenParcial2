@@ -74,8 +74,8 @@ public class BookServiceTest {
         isDeleted = bookService.deleteAll();
 
         assertEquals(isDeleted, true);
-    }*/
-
+    }
+*/
     @Test
     public void testTotalPriceAllBook() {
         bookDAO = new BookDAOImpl();
